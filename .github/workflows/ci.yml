@@ -11,6 +11,7 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -20,21 +21,20 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
+      - name: Install minimal dependencies
         run: |
           python -m pip install --upgrade pip
-          if [ -f pyproject.toml ]; then
-            pip install -e .
-          else
-            pip install -r requirements.txt
-          fi
+          pip install fastapi uvicorn
 
-      - name: Quick import check
+      - name: Smoke test FastAPI app
         run: |
-          python -c "from apps.agent_api.main import app; print('App import OK')"
+          python - << 'PY'
+          from fastapi import FastAPI
+          from apps.agent_api.main import app
+          assert isinstance(app, FastAPI)
+          print("FastAPI app import OK")
+          PY
 
-      - name: Run evals (placeholder)
+      - name: Smoke test eval runner
         run: |
           python apps/evals/run_evals.py apps/evals/datasets/synthetic_guideline_cases.jsonl
-
-
