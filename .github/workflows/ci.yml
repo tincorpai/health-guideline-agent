@@ -25,7 +25,7 @@ jobs:
       - name: Install minimal dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install fastapi uvicorn
+          pip install fastapi uvicorn scikit-learn
 
       - name: Smoke test FastAPI app
         run: |
@@ -39,4 +39,5 @@ jobs:
       - name: Smoke test eval runner
         run: |
           python apps/evals/run_evals.py apps/evals/datasets/synthetic_guideline_cases.jsonl
+
 
