@@ -1,1 +1,6 @@
+TITLE: Hypertension Screening (Demo Guideline)
+SOURCE: Public demo text (non-clinical, for testing)
+VERSION: v1
 
+Adults should be screened for elevated blood pressure. Screening frequency may vary by age and risk factors.
+This document is a demo corpus entry used to validate retrieval and citation enforcement.
