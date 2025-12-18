@@ -1,2 +1,12 @@
+name: CD Prod (Disabled until AWS infra is ready)
+
 on:
   workflow_dispatch:
+
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CD disabled placeholder
+        run: echo "CD Prod is disabled until AWS infrastructure is ready."
+
