@@ -1,4 +1,4 @@
-name: CD Dev (Disabled until AWS infra is ready)
+name: CD Prod (Disabled until AWS infra is ready)
 
 on:
   workflow_dispatch:
@@ -7,5 +7,6 @@ jobs:
   noop:
     runs-on: ubuntu-latest
     steps:
-      - name: CD Dev disabled placeholder
-        run: echo "CD Dev is disabled until AWS infrastructure is ready."
+      - name: CD Prod disabled placeholder
+        run: echo "CD Prod is disabled until AWS infrastructure is ready."
+
