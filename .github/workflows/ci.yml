@@ -2,8 +2,9 @@ name: CI
 
 on:
   pull_request:
+    branches: ["master"]
   push:
-    branches: [ "main", "master" ]
+    branches: ["master"]
 
 permissions:
   contents: read
@@ -38,3 +39,4 @@ jobs:
       - name: Smoke test eval runner
         run: |
           python apps/evals/run_evals.py apps/evals/datasets/synthetic_guideline_cases.jsonl
+
