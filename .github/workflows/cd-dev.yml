@@ -7,5 +7,6 @@ jobs:
   noop:
     runs-on: ubuntu-latest
     steps:
-      - name: CD disabled placeholder
+      - name: CD Dev disabled placeholder
         run: echo "CD Dev is disabled until AWS infrastructure is ready."
+
