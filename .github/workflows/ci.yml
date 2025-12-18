@@ -3,7 +3,7 @@ name: CI
 on:
   pull_request:
   push:
-    branches: [ "master" ]
+    branches: [ "main", "master" ]
 
 permissions:
   contents: read
@@ -36,4 +36,5 @@ jobs:
       - name: Run evals (placeholder)
         run: |
           python apps/evals/run_evals.py apps/evals/datasets/synthetic_guideline_cases.jsonl
+
 
